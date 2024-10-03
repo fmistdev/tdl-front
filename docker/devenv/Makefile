@@ -1,3 +1,5 @@
+# call from a different directory:
+# make -C docker/devenv up
 
 # launch devenv container
 # -d pour detached
