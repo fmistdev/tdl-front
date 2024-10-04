@@ -2,21 +2,20 @@
 name: ${PROJECT_NAME}
 
 services:
-
   front:
     build:
       context: ./
       dockerfile: Dockerfile
     # give a name to the builded image
     image: devenv-angular:node-20.9.0-alpine3.17
-    container_name: "${PROJECT_NAME}-front-container"
+    container_name: '${PROJECT_NAME}-front-container'
     volumes:
       - ../..:/project/
       # trick using a named volume to not mix src and packages
       - nodemodules:/project/node_modules
     ports:
       - 4200:4200
-    # keep the local dev container alive 
+    # keep the local dev container alive
     command: tail -F anything
 
 volumes:
