@@ -37,3 +37,7 @@ enter the devenv container
 
 https://dev.to/seanbh/how-to-setup-eslint-and-prettier-in-an-angular-project-30bd
     ng add @angular-eslint/schematics
+
+## add prettier
+
+    npm install prettier -D --save-exact
