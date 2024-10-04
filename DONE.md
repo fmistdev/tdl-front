@@ -31,3 +31,9 @@ enter the devenv container
 
     git push --set-upstream origin master
 
+
+
+## add es lint
+
+https://dev.to/seanbh/how-to-setup-eslint-and-prettier-in-an-angular-project-30bd
+    ng add @angular-eslint/schematics
