@@ -17,6 +17,4 @@ export class MenuButtonComponent {
     this.isOpened = !this.isOpened;
     this.isOpenedChange.emit(this.isOpened);
   }
-
-
 }

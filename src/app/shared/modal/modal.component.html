@@ -1,6 +1,8 @@
 <app-overlay *ngIf="isVisible" (closeOverlay)="close()">
-    <div class="modal" *ngIf="isVisible">
-        <ng-content></ng-content>
-        <button class="close-btn" (click)="close()"><span class="material-symbols-rounded">close</span></button>
-    </div>
+  <div class="modal" *ngIf="isVisible">
+    <ng-content></ng-content>
+    <button class="close-btn" (click)="close()">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </div>
 </app-overlay>

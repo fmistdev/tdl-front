@@ -8,9 +8,8 @@ describe('HarmonyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HarmonyComponent]
-    })
-    .compileComponents();
+      imports: [HarmonyComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HarmonyComponent);
     component = fixture.componentInstance;

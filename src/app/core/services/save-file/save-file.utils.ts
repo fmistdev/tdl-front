@@ -111,7 +111,9 @@ export function loadFile(file: File): Observable<string> {
 
 export function loadJson(file: File): Observable<object> {
   if (file.type !== 'application/json') {
-    return throwError(() => new Error('Cannot load json file, wrong Mime type'));
+    return throwError(
+      () => new Error('Cannot load json file, wrong Mime type')
+    );
   }
 
   return loadFile(file).pipe(
@@ -120,5 +122,4 @@ export function loadJson(file: File): Observable<object> {
       return jsonObject;
     })
   );
-
 }

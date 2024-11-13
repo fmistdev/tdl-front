@@ -65,7 +65,7 @@ button {
     height: 100px;
     transition: transform 0.5s;
   }
-  
+
   &:active::after {
     transform: scale(3);
     transition: transform 0.5s;
@@ -104,7 +104,9 @@ input::placeholder {
 }
 
 // fix: because material icon fixe une line height
-.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp {
+.material-symbols-outlined,
+.material-symbols-rounded,
+.material-symbols-sharp {
   vertical-align: sub;
 }
 

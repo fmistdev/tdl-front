@@ -13,8 +13,7 @@ import { VersionService } from '../../core/services/version/version.service';
 export class HomeComponent implements OnInit {
   appName = environment.appName;
 
-  constructor(private versionService: VersionService) {
-  }
+  constructor(private versionService: VersionService) {}
 
   ngOnInit() {
     this.versionService.getAppVersion().subscribe((version) => {

@@ -12,14 +12,14 @@ $noteOut: #cfd8ec;
 @mixin gammeName {
   position: absolute;
   top: 50%;
-//   transform: translateY(-50%);
-//   left: 105%;
+  //   transform: translateY(-50%);
+  //   left: 105%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   white-space: nowrap;
   background-color: white;
-  padding: 0 .7rem;
-  border-radius: .5rem;
+  padding: 0 0.7rem;
+  border-radius: 0.5rem;
 }
 
 .majeure {
@@ -111,31 +111,31 @@ $noteOut: #cfd8ec;
 }
 
 .mineure-harmo-miroir {
-    @extend %gamme;
-    &::after {
-      content: 'mineure-harmo-miroir';
-      @include gammeName;
-    }
-    background: conic-gradient(
-      $noteStrong 0% 30deg,
-      $noteWeak 30deg 60deg,
-      $noteOut 60deg 90deg,
-      $noteOut 90deg 120deg,
-      $noteWeak 120deg 150deg,
-      $noteWeak 150deg 180deg,
-      $noteOut 180deg 210deg,
-      $noteWeak 210deg 240deg,
-      $noteOut 240deg 270deg,
-      $noteWeak 270deg 300deg,
-      $noteWeak 300deg 330deg,
-      $noteOut 330deg 360deg
-    );
+  @extend %gamme;
+  &::after {
+    content: 'mineure-harmo-miroir';
+    @include gammeName;
   }
+  background: conic-gradient(
+    $noteStrong 0% 30deg,
+    $noteWeak 30deg 60deg,
+    $noteOut 60deg 90deg,
+    $noteOut 90deg 120deg,
+    $noteWeak 120deg 150deg,
+    $noteWeak 150deg 180deg,
+    $noteOut 180deg 210deg,
+    $noteWeak 210deg 240deg,
+    $noteOut 240deg 270deg,
+    $noteWeak 270deg 300deg,
+    $noteWeak 300deg 330deg,
+    $noteOut 330deg 360deg
+  );
+}
 
 .fond-D {
   transform: rotate(2 * 30deg);
 }
 
 .fond-A {
-    transform: rotate(9 * 30deg);
-  }
+  transform: rotate(9 * 30deg);
+}

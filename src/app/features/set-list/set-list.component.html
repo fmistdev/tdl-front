@@ -1,118 +1,179 @@
 <section class="main">
-    <header class="top-bar my-element">
-        <!-- <span class="material-symbols-rounded">menu</span> -->
-        <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
-            <span class="material-symbols-rounded">arrow_back</span>
-        </a>
+  <header class="top-bar my-element">
+    <!-- <span class="material-symbols-rounded">menu</span> -->
+    <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <span class="material-symbols-rounded">arrow_back</span>
+    </a>
 
-        <div class="title">Set List</div>
+    <div class="title">Set List</div>
 
-        <app-menu-button [(isOpened)]="displayMenu">
-            <app-input-file (inputFileChange)="loadSetList($event)" accept=".json">
-                Load Set List <span class="material-symbols-rounded">upload</span>
-            </app-input-file>
-            <button (click)="saveSetList()">Save set list <span
-                    class="material-symbols-rounded">download</span></button>
-            <button (click)="deleteSetList()">Delete set list <span
-                    class="material-symbols-rounded">delete</span></button>
-            <hr />
-            <app-input-file (inputFileChange)="loadSongPool($event)" accept=".json">
-                Load Song Pool <span class="material-symbols-rounded">upload</span>
-            </app-input-file>
-            <button (click)="saveSongPool()">Save Song Pool <span
-                    class="material-symbols-rounded">download</span></button>
-            <button (click)="deleteSongPool()">Delete Song Pool <span
-                    class="material-symbols-rounded">delete</span></button>
-            <hr />
-            <button (click)="openRenderView()">RenderView</button>
-        </app-menu-button>
+    <app-menu-button [(isOpened)]="displayMenu">
+      <app-input-file (inputFileChange)="loadSetList($event)" accept=".json">
+        Load Set List <span class="material-symbols-rounded">upload</span>
+      </app-input-file>
+      <button (click)="saveSetList()">
+        Save set list <span class="material-symbols-rounded">download</span>
+      </button>
+      <button (click)="deleteSetList()">
+        Delete set list <span class="material-symbols-rounded">delete</span>
+      </button>
+      <hr />
+      <app-input-file (inputFileChange)="loadSongPool($event)" accept=".json">
+        Load Song Pool <span class="material-symbols-rounded">upload</span>
+      </app-input-file>
+      <button (click)="saveSongPool()">
+        Save Song Pool <span class="material-symbols-rounded">download</span>
+      </button>
+      <button (click)="deleteSongPool()">
+        Delete Song Pool <span class="material-symbols-rounded">delete</span>
+      </button>
+      <hr />
+      <button (click)="openRenderView()">RenderView</button>
+    </app-menu-button>
+  </header>
 
+  <section class="container">
+    <header class="set-title">
+      <input type="text" [(ngModel)]="setListTitle" />
     </header>
 
-    <section class="container">
-
-        <header class="set-title">
-            <input type="text" [(ngModel)]="setListTitle">
-        </header>
-
-        <div class="split-layout">
-            <ul class="set-list">
-                @for (song of songList; track $index) {
-                <li class="draggable" [class.dragged]="$index === draggedId && dragLeaveInitial && !dragFromPool"
-                    [class.dropzone-above]="$index === dropZoneId && (dragFromPool || $index < draggedId!)"
-                    [class.dropzone-below]="$index === dropZoneId && (!dragFromPool && $index > draggedId!)"
-                    draggable="true" (dragstart)="onDragStart($event, $index)" (dragover)="onDragOver($event, $index)"
-                    (dragleave)="onDragLeave($event, $index)" (dragend)="onDragEnd($event)"
-                    (drop)="onDrop($event, $index)">
-                    <div class="song-item">
-                        <span>{{$index + 1 | number:'2.0'}}</span>
-                        <span class="material-symbols-rounded">music_note</span>
-                        <span class="song-name">{{song.name}}</span>
-                    </div>
-                </li>
-                }
-            </ul>
-
-            <div class="song-pool">
-                <div class="song-pool-actions">
-                    <button class="material-symbols-rounded" (click)="sendAllToListButton()">keyboard_double_arrow_left</button>
-                    <button class="material-symbols-rounded" (click)="addSongButton()">add</button>
-                    @if (isFilteredSongPool) {
-                    <button class="material-symbols-rounded" (click)="unfilterSongPool()" title="show full song pool">filter_alt_off</button>
-                    } @else {
-                    <button class="material-symbols-rounded" (click)="filterSongPool()" title="filter song pool">filter_alt</button>
-                    }
-                </div>
-
-                <ul draggable="true" (dragover)="onDragOverPool($event)" (drop)="onDropPool($event)"
-                    (dragend)="onDragEnd($event)">
-                    @for (song of displayedSongPool; track $index) {
-                    <li class="draggable" draggable="true" (dragstart)="onDragStartPool($event, $index)">
-                        <div class="song-item">
-                            <span class="material-symbols-rounded">music_note</span>
-                            <span class="song-name">{{song.name}}</span>
-
-                            <button class="song-details-button material-symbols-rounded"
-                                (click)="editSongButton(song)">more_horiz</button>
-                        </div>
-                    </li>
-                    }
-                </ul>
-
+    <div class="split-layout">
+      <ul class="set-list">
+        @for (song of songList; track $index) {
+          <li
+            class="draggable"
+            [class.dragged]="
+              $index === draggedId && dragLeaveInitial && !dragFromPool
+            "
+            [class.dropzone-above]="
+              $index === dropZoneId && (dragFromPool || $index < draggedId!)
+            "
+            [class.dropzone-below]="
+              $index === dropZoneId && !dragFromPool && $index > draggedId!
+            "
+            draggable="true"
+            (dragstart)="onDragStart($event, $index)"
+            (dragover)="onDragOver($event, $index)"
+            (dragleave)="onDragLeave($event, $index)"
+            (dragend)="onDragEnd($event)"
+            (drop)="onDrop($event, $index)"
+          >
+            <div class="song-item">
+              <span>{{ $index + 1 | number: '2.0' }}</span>
+              <span class="material-symbols-rounded">music_note</span>
+              <span class="song-name">{{ song.name }}</span>
             </div>
-
-
-        </div>
-
-    </section>
-
-    <app-modal [isVisible]="isVisibleSongDetails" (closeOverlay)="closeSongDetails()">
-        <header>{{ isUpdate ? 'Update' : 'Add' }} song</header>
-        <input type="text" [(ngModel)]="editedSong.name" placeholder="song name" [appFocus]="isVisibleSongDetails" />
-
-        @if(isUpdate) {
-        <button class="button" (click)="updateSongButton()" [disabled]="!editedSong.name">Update</button>
-        <button class="button-warn" (click)="deleteSonButton()">Delete</button>
-        } @else {
-        <button class="button" (click)="createSongButton()" [disabled]="!editedSong.name">Add</button>
+          </li>
         }
+      </ul>
 
-    </app-modal>
-
-
-    <app-modal [isVisible]="isVisibleRenderView" (closeOverlay)="closeRenderView()">
-        <button (click)="generatePDF()">Generate pdf</button>
-        <div class="render-view" #setlist>
-        <!-- <div class="render-view" #setlist [class.html-2-canvas-overflow-fix]="html2CanvasOverflowFix"> -->
-            <header>
-                <div>{{setListTitle}}</div>
-            </header>
-            <ul>
-                @for (song of songList; track $index) {
-                <li>{{song.name}}</li>
-                }
-            </ul>
+      <div class="song-pool">
+        <div class="song-pool-actions">
+          <button
+            class="material-symbols-rounded"
+            (click)="sendAllToListButton()"
+          >
+            keyboard_double_arrow_left
+          </button>
+          <button class="material-symbols-rounded" (click)="addSongButton()">
+            add
+          </button>
+          @if (isFilteredSongPool) {
+            <button
+              class="material-symbols-rounded"
+              (click)="unfilterSongPool()"
+              title="show full song pool"
+            >
+              filter_alt_off
+            </button>
+          } @else {
+            <button
+              class="material-symbols-rounded"
+              (click)="filterSongPool()"
+              title="filter song pool"
+            >
+              filter_alt
+            </button>
+          }
         </div>
-    </app-modal>
 
+        <ul
+          draggable="true"
+          (dragover)="onDragOverPool($event)"
+          (drop)="onDropPool($event)"
+          (dragend)="onDragEnd($event)"
+        >
+          @for (song of displayedSongPool; track $index) {
+            <li
+              class="draggable"
+              draggable="true"
+              (dragstart)="onDragStartPool($event, $index)"
+            >
+              <div class="song-item">
+                <span class="material-symbols-rounded">music_note</span>
+                <span class="song-name">{{ song.name }}</span>
+
+                <button
+                  class="song-details-button material-symbols-rounded"
+                  (click)="editSongButton(song)"
+                >
+                  more_horiz
+                </button>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <app-modal
+    [isVisible]="isVisibleSongDetails"
+    (closeOverlay)="closeSongDetails()"
+  >
+    <header>{{ isUpdate ? 'Update' : 'Add' }} song</header>
+    <input
+      type="text"
+      [(ngModel)]="editedSong.name"
+      placeholder="song name"
+      [appFocus]="isVisibleSongDetails"
+    />
+
+    @if (isUpdate) {
+      <button
+        class="button"
+        (click)="updateSongButton()"
+        [disabled]="!editedSong.name"
+      >
+        Update
+      </button>
+      <button class="button-warn" (click)="deleteSonButton()">Delete</button>
+    } @else {
+      <button
+        class="button"
+        (click)="createSongButton()"
+        [disabled]="!editedSong.name"
+      >
+        Add
+      </button>
+    }
+  </app-modal>
+
+  <app-modal
+    [isVisible]="isVisibleRenderView"
+    (closeOverlay)="closeRenderView()"
+  >
+    <button (click)="generatePDF()">Generate pdf</button>
+    <div class="render-view" #setlist>
+      <!-- <div class="render-view" #setlist [class.html-2-canvas-overflow-fix]="html2CanvasOverflowFix"> -->
+      <header>
+        <div>{{ setListTitle }}</div>
+      </header>
+      <ul>
+        @for (song of songList; track $index) {
+          <li>{{ song.name }}</li>
+        }
+      </ul>
+    </div>
+  </app-modal>
 </section>

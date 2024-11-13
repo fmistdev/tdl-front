@@ -3,9 +3,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OverlayComponent } from '../../layouts/overlay/overlay.component';
-import {
-  loadJson,
-} from './set-list.utils';
+import { loadJson } from './set-list.utils';
 import {
   addFileDate,
   extractTitle,
@@ -64,7 +62,7 @@ export class SetListComponent {
   editedSong: Song = this.emptySong;
   isVisibleSongDetails = false;
   isUpdate = false;
-  
+
   sendAllToListButton() {
     this.songList = [...this.fullSongPool];
     this.updateDisplayedSongPool();
@@ -243,7 +241,6 @@ export class SetListComponent {
   }
 
   public generatePDF(): void {
-
     // hack to bypass overflow issue: cloe
     const clone = this.setListElmt.nativeElement.cloneNode(true) as HTMLElement;
     clone.style.height = 'auto';
@@ -314,7 +311,9 @@ export class SetListComponent {
     console.debug(`onDrop - ${this.log()}`);
     event.preventDefault(); // Annuler le comportement par défaut (ouvrir un lien, etc.)
 
-    const draggedIndexString = event.dataTransfer?.getData(this.dndSongIndexKey);
+    const draggedIndexString = event.dataTransfer?.getData(
+      this.dndSongIndexKey
+    );
     if (!draggedIndexString) {
       console.error(`Cannot drop, wrong song index: ${draggedIndexString}`);
       return;
@@ -342,7 +341,9 @@ export class SetListComponent {
     console.debug(`onDropPool - ${this.log()}`);
     event.preventDefault(); // Annuler le comportement par défaut (ouvrir un lien, etc.)
 
-    const draggedIndexString = event.dataTransfer?.getData(this.dndSongIndexKey);
+    const draggedIndexString = event.dataTransfer?.getData(
+      this.dndSongIndexKey
+    );
     if (!draggedIndexString) {
       return;
     }
@@ -373,5 +374,3 @@ export class SetListComponent {
     this.dragFromPool = false;
   }
 }
-
-

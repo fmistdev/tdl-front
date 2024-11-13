@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './overlay.component.html',
-  styleUrl: './overlay.component.scss'
+  styleUrl: './overlay.component.scss',
 })
 export class OverlayComponent {
   @Input() isTransparent = false;

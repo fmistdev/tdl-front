@@ -5,23 +5,23 @@
 // https://paletton.com
 
 :root {
-  --primary-xxxxx: #4CA69A;
-  --primary-xxxx: #79CBC0;
-  --primary-xxx: #A9E6DE;
-  --primary-xx: #D8F8F3;
-  --primary-x: #FDFFFF;
+  --primary-xxxxx: #4ca69a;
+  --primary-xxxx: #79cbc0;
+  --primary-xxx: #a9e6de;
+  --primary-xx: #d8f8f3;
+  --primary-x: #fdffff;
 
-  --secondary-xxxxx: #5979AE;
-  --secondary-xxxx: #84A0D0;
-  --secondary-xxx: #B1C5E8;
-  --secondary-xx: #DBE6F8;
-  --secondary-x: #FDFEFF;
+  --secondary-xxxxx: #5979ae;
+  --secondary-xxxx: #84a0d0;
+  --secondary-xxx: #b1c5e8;
+  --secondary-xx: #dbe6f8;
+  --secondary-x: #fdfeff;
 
-  --opposite-xxxxx: #FF5D32;
-  --opposite-xxxx: #FF7D5B;
-  --opposite-xxx: #FF9B80;
-  --opposite-xx: #FFBDAC;
-  --opposite-x: #FFE4DC;
+  --opposite-xxxxx: #ff5d32;
+  --opposite-xxxx: #ff7d5b;
+  --opposite-xxx: #ff9b80;
+  --opposite-xx: #ffbdac;
+  --opposite-x: #ffe4dc;
 
   --primary-color: var(--primary-xxxx);
   --secondary-color: var(--secondary-xxxx);
@@ -30,5 +30,3 @@
 
   --box-shadows: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-

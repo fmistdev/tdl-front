@@ -1,8 +1,12 @@
 <!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
 <!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <div class="overlay" (click)="close()" [class.transparent]="isTransparent">
-    <div class="overlay-content" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
-        <ng-content></ng-content>
-    </div>
+  <div
+    class="overlay-content"
+    (click)="$event.stopPropagation()"
+    (keydown)="$event.stopPropagation()"
+  >
+    <ng-content></ng-content>
+  </div>
 </div>
 <!--eslint-enable-->

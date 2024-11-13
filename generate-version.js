@@ -7,7 +7,7 @@ const packageJson = require('./package.json');
 console.log('generate version');
 
 const versionData = {
-  version: packageJson.version
+  version: packageJson.version,
 };
 
 fs.writeFileSync('./public/version.json', JSON.stringify(versionData, null, 2));

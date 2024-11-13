@@ -3,8 +3,14 @@
     <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
       <span class="material-symbols-rounded">arrow_back</span>
     </a>
-    <div class="title">Bloc Note </div>
-    <button class="material-symbols-rounded" *ngIf="!note.isSync" (click)="save()">save</button>
+    <div class="title">Bloc Note</div>
+    <button
+      class="material-symbols-rounded"
+      *ngIf="!note.isSync"
+      (click)="save()"
+    >
+      save
+    </button>
 
     <app-menu-button [(isOpened)]="displayMenu">
       <app-input-file (inputFileChange)="load($event)">
@@ -18,6 +24,10 @@
     </app-menu-button>
   </header>
   <section class="container">
-    <textarea class="note" [(ngModel)]="note.content" (ngModelChange)="noteChange($event)"></textarea>
+    <textarea
+      class="note"
+      [(ngModel)]="note.content"
+      (ngModelChange)="noteChange($event)"
+    ></textarea>
   </section>
 </section>

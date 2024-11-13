@@ -6,9 +6,9 @@ import { HarmonyComponent } from './features/harmony/harmony.component';
 import { BlocNoteComponent } from './features/bloc-note/bloc-note.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'todo-list', component: TodoListComponent },
-    { path: 'set-list', component: SetListComponent },
-    { path: 'harmony', component: HarmonyComponent },
-    { path: 'bloc-note', component: BlocNoteComponent },
+  { path: '', component: HomeComponent },
+  { path: 'todo-list', component: TodoListComponent },
+  { path: 'set-list', component: SetListComponent },
+  { path: 'harmony', component: HarmonyComponent },
+  { path: 'bloc-note', component: BlocNoteComponent },
 ];

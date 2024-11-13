@@ -1,4 +1,4 @@
-import { validateObjectProperty } from "./model.utils";
+import { validateObjectProperty } from './model.utils';
 
 export interface Todo {
   id: number;
@@ -11,7 +11,7 @@ export type TodoNoId = Omit<Todo, 'id'>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function isTodoNoIdList(data: any): data is TodoNoId[] {
-    return Array.isArray(data) && data.every(isTodoNoId);
+  return Array.isArray(data) && data.every(isTodoNoId);
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,12 +22,8 @@ export function isTodoNoId(data: any): data is TodoNoId {
     data !== null &&
     !Array.isArray(data) &&
     // properties
-    validateObjectProperty(data,'label', 'string') &&
-    validateObjectProperty(data,'dueDate', 'string') &&
-    validateObjectProperty(data,'isDone', 'boolean')
+    validateObjectProperty(data, 'label', 'string') &&
+    validateObjectProperty(data, 'dueDate', 'string') &&
+    validateObjectProperty(data, 'isDone', 'boolean')
   );
 }
-
-
-
-

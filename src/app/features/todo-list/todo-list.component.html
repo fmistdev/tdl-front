@@ -11,68 +11,92 @@
     </button>
 
     <app-menu-button [(isOpened)]="displayMenu">
-      <app-input-file (inputFileChange)="loadJsonInputChange($event)" accept=".json">
-        Load/Append file 
+      <app-input-file
+        (inputFileChange)="loadJsonInputChange($event)"
+        accept=".json"
+      >
+        Load/Append file
         <span class="material-symbols-rounded">upload</span>
       </app-input-file>
       <button (click)="saveJsonButton()">
-        Save file 
+        Save file
         <span class="material-symbols-rounded">save_as</span>
       </button>
       <button (click)="deleteAllButton()">
-        Delete all 
+        Delete all
         <!-- <span class="emoji">☢️</span> -->
         <span class="material-symbols-rounded">delete</span>
       </button>
     </app-menu-button>
-
   </header>
 
   <section class="container">
     <ul class="todo-list">
-
-      <li class="todo-item" *ngFor="let todo of todoList$ | async;"  [class.done]="todo.isDone">
+      <li
+        class="todo-item"
+        *ngFor="let todo of todoList$ | async"
+        [class.done]="todo.isDone"
+      >
         <button (click)="editTodoButton(todo)">
-
           @if (todo.isDone) {
             <span class="material-symbols-rounded">check_box</span>
           } @else {
-            <span class="material-symbols-rounded">check_box_outline_blank</span>
+            <span class="material-symbols-rounded"
+              >check_box_outline_blank</span
+            >
           }
-          
-          <span class="todo-label">{{
-            todo.label
-            }}</span>
+
+          <span class="todo-label">{{ todo.label }}</span>
           <span class="todo-due-date">{{ todo.dueDate }}</span>
         </button>
       </li>
-
     </ul>
   </section>
 </section>
 
-
 <!-- create / update overlay -->
-<app-modal [isVisible]="displayCreateUpdate" (closeOverlay)="hideCreateUpdate()">
+<app-modal
+  [isVisible]="displayCreateUpdate"
+  (closeOverlay)="hideCreateUpdate()"
+>
   <div class="create-update-component">
     <header>{{ isUpdate ? 'Update' : 'Add' }} task</header>
-    <input type="text" [(ngModel)]="editTodoLabel" placeholder="label" [appFocus]="displayCreateUpdate" />
+    <input
+      type="text"
+      [(ngModel)]="editTodoLabel"
+      placeholder="label"
+      [appFocus]="displayCreateUpdate"
+    />
 
     <div class="secondary-parameters">
       <label class="custom-checkbox">
-        <input class="param-is-done" type="checkbox" [(ngModel)]="editTodoIsDone" />
+        <input
+          class="param-is-done"
+          type="checkbox"
+          [(ngModel)]="editTodoIsDone"
+        />
         <span class="checkbox-mark"></span>
         <span class="checkbox-label">status</span>
       </label>
 
       <input class="param-id" type="text" [(ngModel)]="editTodoId" disabled />
-      <input class="param-due-date" type="text" [(ngModel)]="editTodoDueDate" placeholder="due date"
-        title="iso format: 2024-10-04T10:24" />
-      <button class="button" (click)="createUpdateTodoButton()" [disabled]="!editTodoLabel">
+      <input
+        class="param-due-date"
+        type="text"
+        [(ngModel)]="editTodoDueDate"
+        placeholder="due date"
+        title="iso format: 2024-10-04T10:24"
+      />
+      <button
+        class="button"
+        (click)="createUpdateTodoButton()"
+        [disabled]="!editTodoLabel"
+      >
         {{ isUpdate ? 'Update' : 'Add' }}
       </button>
-      <button *ngIf="isUpdate" class="button-warn" (click)="deleteTodoButton()">Delete</button>
+      <button *ngIf="isUpdate" class="button-warn" (click)="deleteTodoButton()">
+        Delete
+      </button>
     </div>
-
   </div>
 </app-modal>

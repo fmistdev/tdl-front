@@ -8,9 +8,8 @@ describe('BlocNoteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BlocNoteComponent]
-    })
-    .compileComponents();
+      imports: [BlocNoteComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BlocNoteComponent);
     component = fixture.componentInstance;
