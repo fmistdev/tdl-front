@@ -58,3 +58,16 @@ version should be set manually in package.json
 
 pre-build script (launched on build) extract version from package.json and update the file public/version.json
 which is retrieved by dedicated service to be injected and displayed in the app
+
+
+## init repo git
+
+    create (empty) repo online on github: fmistdev/quckoo-front
+    echo "# quckoo-front" >> README.md
+
+    git config --local user.name fmistdev
+    git config --local user.email fmistdev@example.com
+    git remote add origin git@github.com:fmistdev/quckoo-front.git
+    git config -l --show-origin
+
+    git push --set-upstream origin master
