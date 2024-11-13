@@ -35,7 +35,7 @@ jobs:
     - name: Install and Build 🔧
       run: |
         npm ci
-        npm run build -- --configuration=production --base-href="/tdl-front/"
+        npm run build -- --configuration=production --base-href="/tdl-front/" --deploy-url="/tdl-front/"
       working-directory: ./
       
     - name: Deploy 🚀
