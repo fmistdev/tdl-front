@@ -1,0 +1,54 @@
+html {
+  /* initialisation de la valeur rem: 1 rem = 10px (62,5% 16px = 10px)*/
+  font-size: 62.5%;
+}
+
+body {
+  /* on revient a la taille du vavigateur par defaut */
+  font-size: 1.6rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea,
+optgroup {
+  font: inherit;
+  // letter-spacing: inherit;
+  // line-height: inherit;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+button {
+  color: inherit;
+  background-color: inherit;
+  border: unset;
+}
+
+li {
+  list-style-type: none;
+}

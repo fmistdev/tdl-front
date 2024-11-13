@@ -1,0 +1,141 @@
+$noteStrong: #355fbd;
+$noteWeak: #5173c0;
+$noteOut: #cfd8ec;
+
+%gamme {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  clip-path: circle(50% at 50% 50%);
+}
+
+@mixin gammeName {
+  position: absolute;
+  top: 50%;
+//   transform: translateY(-50%);
+//   left: 105%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  white-space: nowrap;
+  background-color: white;
+  padding: 0 .7rem;
+  border-radius: .5rem;
+}
+
+.majeure {
+  @extend %gamme;
+  &::after {
+    content: 'majeure';
+    @include gammeName;
+  }
+  background: conic-gradient(
+    $noteStrong 0% 30deg,
+    $noteOut 30deg 60deg,
+    $noteWeak 60deg 90deg,
+    $noteOut 90deg 120deg,
+    $noteWeak 120deg 150deg,
+    $noteWeak 150deg 180deg,
+    $noteOut 180deg 210deg,
+    $noteWeak 210deg 240deg,
+    $noteOut 240deg 270deg,
+    $noteWeak 270deg 300deg,
+    $noteOut 300deg 330deg,
+    $noteWeak 330deg 360deg
+  );
+}
+
+.mineure {
+  @extend %gamme;
+  &::after {
+    content: 'mineure';
+    @include gammeName;
+  }
+  background: conic-gradient(
+    $noteStrong 0% 30deg,
+    $noteOut 30deg 60deg,
+    $noteWeak 60deg 90deg,
+    $noteWeak 90deg 120deg,
+    $noteOut 120deg 150deg,
+    $noteWeak 150deg 180deg,
+    $noteOut 180deg 210deg,
+    $noteWeak 210deg 240deg,
+    $noteWeak 240deg 270deg,
+    $noteOut 270deg 300deg,
+    $noteWeak 300deg 330deg,
+    $noteOut 330deg 360deg
+  );
+}
+
+.mineure-harmo {
+  @extend %gamme;
+  &::after {
+    content: 'mineure-harmo';
+    @include gammeName;
+  }
+  background: conic-gradient(
+    $noteStrong 0% 30deg,
+    $noteOut 30deg 60deg,
+    $noteWeak 60deg 90deg,
+    $noteWeak 90deg 120deg,
+    $noteOut 120deg 150deg,
+    $noteWeak 150deg 180deg,
+    $noteOut 180deg 210deg,
+    $noteWeak 210deg 240deg,
+    $noteWeak 240deg 270deg,
+    $noteOut 270deg 300deg,
+    $noteOut 300deg 330deg,
+    $noteWeak 330deg 360deg
+  );
+}
+
+.mineure-melo {
+  @extend %gamme;
+  &::after {
+    content: 'mineure-melo';
+    @include gammeName;
+  }
+  background: conic-gradient(
+    $noteStrong 0% 30deg,
+    $noteOut 30deg 60deg,
+    $noteWeak 60deg 90deg,
+    $noteWeak 90deg 120deg,
+    $noteOut 120deg 150deg,
+    $noteWeak 150deg 180deg,
+    $noteOut 180deg 210deg,
+    $noteWeak 210deg 240deg,
+    $noteOut 240deg 270deg,
+    $noteWeak 270deg 300deg,
+    $noteOut 300deg 330deg,
+    $noteWeak 330deg 360deg
+  );
+}
+
+.mineure-harmo-miroir {
+    @extend %gamme;
+    &::after {
+      content: 'mineure-harmo-miroir';
+      @include gammeName;
+    }
+    background: conic-gradient(
+      $noteStrong 0% 30deg,
+      $noteWeak 30deg 60deg,
+      $noteOut 60deg 90deg,
+      $noteOut 90deg 120deg,
+      $noteWeak 120deg 150deg,
+      $noteWeak 150deg 180deg,
+      $noteOut 180deg 210deg,
+      $noteWeak 210deg 240deg,
+      $noteOut 240deg 270deg,
+      $noteWeak 270deg 300deg,
+      $noteWeak 300deg 330deg,
+      $noteOut 330deg 360deg
+    );
+  }
+
+.fond-D {
+  transform: rotate(2 * 30deg);
+}
+
+.fond-A {
+    transform: rotate(9 * 30deg);
+  }

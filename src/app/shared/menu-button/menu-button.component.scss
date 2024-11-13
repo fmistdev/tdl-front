@@ -1,0 +1,42 @@
+// https://m3.material.io/components/menus/specs
+
+.menu {
+  position: absolute;
+  right: 2rem;
+
+  z-index: 1020; // above overlay
+
+  min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 0.4rem;
+  color: var(--primary-x);
+  background: var(--primary-xxx);
+
+  box-shadow: var(--box-shadows);
+
+  padding: 0.8rem 0;
+
+  line-height: 4.8rem;
+  font-size: 1.6rem;
+
+  ::ng-deep {
+    & > hr {
+      margin: 0.8rem 0;
+      border: solid var(--primary-xx) 0.05rem;
+    }
+
+    & > *:not(hr) {
+      display: inline-block;
+      text-align: start;
+      width: 100%;
+      padding: 0 1.2rem;
+
+      &:hover {
+        background: var(--primary-xxxx);
+      }
+    }
+  }
+
+}

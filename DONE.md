@@ -41,3 +41,20 @@ ng add @angular-eslint/schematics
 Some ESLint rules conflict with Prettier ones, so Prettier has published an eslint-config that disables those rules. Run the following
 
     npm install -D eslint-config-prettier
+
+
+## persistance
+
+Todo in indexed DB
+
+Bloc note persistence in local storage
+
+no persistence for set list
+
+
+## version management
+
+version should be set manually in package.json
+
+pre-build script (launched on build) extract version from package.json and update the file public/version.json
+which is retrieved by dedicated service to be injected and displayed in the app

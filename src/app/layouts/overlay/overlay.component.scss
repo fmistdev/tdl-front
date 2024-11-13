@@ -1,0 +1,17 @@
+.overlay {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); // Background semi-transparent
+  z-index: 1000;
+
+  justify-content: center;
+  align-items: center;
+
+  &.transparent {
+    background: transparent; // Background semi-transparent
+  }
+}

@@ -1,0 +1,4 @@
+<label [for]="uniqueId" class="input-file-label">
+    <ng-content></ng-content>
+</label>
+<input [id]="uniqueId" type="file" (change)="inputChange($event)" [attr.accept]="accept ? accept : null" />

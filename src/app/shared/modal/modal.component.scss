@@ -1,0 +1,23 @@
+.modal {
+  position: relative;
+  z-index: 1010;
+
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--background-color);
+  box-shadow: var(--box-shadows);
+}
+
+.close-btn {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+
+  padding: .6rem .6rem;
+  border-radius: 50%;
+  // color inverted on purpose
+  color: var(--background-color);
+  background: var(--secondary-color);
+  box-shadow: var(--box-shadows);
+}
+

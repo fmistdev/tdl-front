@@ -1,0 +1,34 @@
+// Palette de couleurs globales
+
+// color design tools:
+// https://oklch.com
+// https://paletton.com
+
+:root {
+  --primary-xxxxx: #4CA69A;
+  --primary-xxxx: #79CBC0;
+  --primary-xxx: #A9E6DE;
+  --primary-xx: #D8F8F3;
+  --primary-x: #FDFFFF;
+
+  --secondary-xxxxx: #5979AE;
+  --secondary-xxxx: #84A0D0;
+  --secondary-xxx: #B1C5E8;
+  --secondary-xx: #DBE6F8;
+  --secondary-x: #FDFEFF;
+
+  --opposite-xxxxx: #FF5D32;
+  --opposite-xxxx: #FF7D5B;
+  --opposite-xxx: #FF9B80;
+  --opposite-xx: #FFBDAC;
+  --opposite-x: #FFE4DC;
+
+  --primary-color: var(--primary-xxxx);
+  --secondary-color: var(--secondary-xxxx);
+  --background-color: var(--primary-x);
+  --text-color: var(--primary-xxxxx);
+
+  --box-shadows: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+

@@ -1,0 +1,147 @@
+$font-stack: 'Roboto', Verdana, Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $font-stack;
+  line-height: 1.8rem;
+  // line-height: normal;
+  // letter-spacing: 0.08rem;
+  // letter-spacing: normal;
+  font-weight: normal;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+// ------------------------ global button
+
+// button could have a lot a different styles
+%button {
+  // pointer-events: auto;
+
+  // margin: 1px;
+  padding: 8px 12px;
+  border-radius: 1.2rem;
+}
+
+.button {
+  @extend %button;
+
+  color: var(--primary-x);
+  background-color: var(--primary-xxxx);
+
+  &:hover {
+    background-color: var(--primary-xxxxx);
+  }
+}
+
+.button-warn {
+  @extend %button;
+
+  color: var(--opposite-x);
+  background-color: var(--opposite-xxxx);
+
+  &:hover {
+    background-color: var(--opposite-xxxxx);
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+// ripple effect ---------------
+
+%ripple {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    width: 100px;
+    height: 100px;
+    transition: transform 0.5s;
+  }
+  
+  &:active::after {
+    transform: scale(3);
+    transition: transform 0.5s;
+  }
+}
+
+button {
+  @extend %ripple;
+}
+
+// ---------------
+
+// https://m3.material.io/components/text-fields/specs#3a56b7a8-3a45-4d27-b95a-644fe38864e1
+input {
+  height: 5.6rem;
+  padding: 0 1.4rem; // et pas 16px a cause de la bordure
+  border: solid 1px;
+  border-radius: 3px;
+  border-color: black;
+  background-color: transparent;
+}
+
+input::placeholder {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.emoji {
+  font-size: 1em; /* Ajuste la taille de l'emoji */
+  line-height: 100%; /* Réduit l'espace vertical autour de l'emoji */
+  // vertical-align: middle; /* Aligne l'emoji au milieu de la ligne de texte */
+}
+
+:disabled {
+  opacity: 0.38;
+}
+
+// fix: because material icon fixe une line height
+.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp {
+  vertical-align: sub;
+}
+
+section.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  header.top-bar {
+    min-height: 6.4rem;
+    height: 6.4rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    gap: 1rem;
+    padding: 0 1.6rem;
+
+    background-color: var(--primary-xxxx);
+    color: var(--primary-x);
+
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+
+    .title {
+      flex-grow: 1;
+    }
+  }
+
+  section.container {
+    // height: calc(100vh - 6.4rem);
+    flex-grow: 1;
+    // margin-top: 6.4rem; // see top app bar component
+    overflow-y: auto;
+
+    border: solid var(--secondary-xxxxx) 5px; // debug
+  }
+}

@@ -1,0 +1,5 @@
+<button class="material-symbols-rounded" (click)="toggleButton()">more_Vert</button>
+<app-overlay *ngIf="isOpened" (closeOverlay)="isOpened = false" is [isTransparent]="true"></app-overlay>
+<div class="menu" *ngIf="isOpened">
+    <ng-content></ng-content>
+</div>

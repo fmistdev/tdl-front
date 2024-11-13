@@ -1,0 +1,124 @@
+$itemHeight: 3.6rem;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  // height: 100%;
+
+  .set-title {
+    // padding: 2rem 0;
+    text-align: center;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .split-layout {
+    flex-grow: 1;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: row;
+
+    .set-list {
+      width: 50%;
+      overflow-y: auto;
+      background-color: rgb(215, 246, 250);
+    }
+
+    .song-pool {
+      width: 50%;
+
+      display: flex;
+      flex-direction: column;
+
+      .song-pool-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: end;
+      }
+
+      ul {
+        flex-grow: 1;
+        overflow-y: auto;
+        background-color: antiquewhite;
+
+        .song-item .song-details-button {
+          opacity: 0;
+        }
+
+        .song-item:hover .song-details-button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.song-item {
+  position: relative;
+  height: $itemHeight;
+  display: flex; /* Active flexbox */
+  align-items: center; /* Centre verticalement le contenu */
+  padding: 0 1.6rem;
+  gap: 1.6rem;
+
+  .song-name {
+    flex-grow: 1;
+  }
+}
+
+// ---- drag n drop --------------------
+
+$insertLine: solid grey 2px;
+
+.draggable {
+  position: relative;
+  cursor: grab;
+
+  &.dropzone-above {
+    border-top: $insertLine;
+  }
+
+  &.dropzone-below {
+    border-bottom: $insertLine;
+  }
+
+  &.dragged {
+    opacity: 0.5;
+  }
+}
+
+.draggable:hover {
+  background-color: var(--secondary-xx);
+}
+
+// ---------------------------- render print view
+
+.render-view {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: black;
+  max-height: 80vh;
+
+  &.html-2-canvas-overflow-fix {
+    max-height: none;
+  }
+
+  header {
+    margin-bottom: 1.2em;
+    border-bottom: solid 1px;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    flex-grow: 1;
+    overflow-y: auto;
+
+    font-weight: 700;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,25 @@
+// necessaire pour pourvair faire: @extend button
+@import '../../../styles/global';
+
+// Masquer l'input natif moche, et peu parametrable
+input[type='file'] {
+  display: none;
+}
+
+//va devenir le nouveau bouton customisé
+label {
+  display: inline-block; // pour matcher le comprtement button
+  line-height: inherit;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+
+  button {
+    width: 100%;
+    text-align: start;
+  }
+
+  @extend %ripple;
+  overflow: clip;
+
+}

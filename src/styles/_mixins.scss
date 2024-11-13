@@ -1,0 +1,49 @@
+// Mixins pour les media queries
+$breakpoints: (
+  // par defaut less than 320px, no device does not exist
+  'not-supported': 0px,
+  'mobile': 320px,
+  'mobile-landscape': 576px,
+  'tablet-portait': 600px,
+  'tablet-landscape': 768px,
+  'desktop': 1024px,
+  'large-desktop': 1280px,
+  'extra-large-screen': 1440px
+);
+
+@mixin respond-to($device) {
+  $breakpoint: map-get($breakpoints, $device);
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// ------------------- .screen-info (debug tool) -------------------
+
+.screen-info {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  color: rgba(255, 0, 0, 0.37);
+  font-size: 1.6rem;
+  background-color: rgba(250, 235, 215, 0.336);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+// pour debug et montrer l'utilisation des mixins
+@each $device, $breakpoint in $breakpoints {
+  @include respond-to($device) {
+    .screen-info::after {
+      content: '#{$device}';
+    }
+  }
+}
+

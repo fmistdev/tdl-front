@@ -1,0 +1,23 @@
+<section class="main">
+  <header class="top-bar">
+    <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <span class="material-symbols-rounded">arrow_back</span>
+    </a>
+    <div class="title">Bloc Note </div>
+    <button class="material-symbols-rounded" *ngIf="!note.isSync" (click)="save()">save</button>
+
+    <app-menu-button [(isOpened)]="displayMenu">
+      <app-input-file (inputFileChange)="load($event)">
+        Load file
+        <span class="material-symbols-rounded">upload</span>
+      </app-input-file>
+      <button (click)="save()">
+        Save file
+        <span class="material-symbols-rounded">save_as</span>
+      </button>
+    </app-menu-button>
+  </header>
+  <section class="container">
+    <textarea class="note" [(ngModel)]="note.content" (ngModelChange)="noteChange($event)"></textarea>
+  </section>
+</section>
