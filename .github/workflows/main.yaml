@@ -1,0 +1,44 @@
+# https://docs.github.com/en/actions
+# https://pages.github.com/
+# https://github.com/JamesIves/github-pages-deploy-action
+name: build-and-deploy-github-pages
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout ⤵️
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        cache-dependency-path: ./package-lock.json
+
+    #  Output location: /home/runner/work/quckoo-front/quckoo-front/dist/project
+    - name: Install and Build 🔧
+      run: |
+        npm ci
+        npm run build -- --base-href="https://fmistdev.github.io/tdl-front/"
+      working-directory: ./
+      
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist/project/browser
