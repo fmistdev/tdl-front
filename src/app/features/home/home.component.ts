@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { environment } from '../../../environments/environment';
 import { VersionService } from '../../core/services/version/version.service';
+import { env } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import { VersionService } from '../../core/services/version/version.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  appName = environment.appName;
+  appName = env.appName;
 
   constructor(private versionService: VersionService) {}
 
