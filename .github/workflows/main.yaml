@@ -35,7 +35,7 @@ jobs:
     - name: Install and Build 🔧
       run: |
         npm ci
-        npm run build -- --base-href="https://fmistdev.github.io/tdl-front/"
+        npm run build -- --base-href="/tdl-front/"
       working-directory: ./
       
     - name: Deploy 🚀
