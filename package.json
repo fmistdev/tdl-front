@@ -10,7 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "npx prettier . --write"
+    "format": "npx prettier --config .prettierrc.json --write \"src/**/*.{ts,html,scss, json}\""
   },
   "private": true,
   "dependencies": {
