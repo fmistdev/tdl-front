@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { environment } from '../environments/environment';
+import { env } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { environment } from '../environments/environment';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  appName = environment.appName;
+  appName = env.appName;
 
   constructor(private titleService: Title) {}
 
