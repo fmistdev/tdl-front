@@ -11,7 +11,7 @@ down:
 
 # rebuild docker image based on Dockerfile
 build:
-	docker compose build
+	docker compose build --no-cache
 
 # remove-container:
 # docker compose rm -s back
