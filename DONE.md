@@ -86,3 +86,13 @@ rm -rf ./node_modules/*
 npm install --verbose
 
 lot of issues, need to restart the same command twice to have it work
+
+
+## set app as PWA
+
+https://angular.dev/ecosystem/service-workers/getting-started
+
+ng add @angular/pwa
+
+need same version than angular/cli
+lot of issues, need to restart the same command twice to have it work
