@@ -1,0 +1,117 @@
+{
+  "configVersion": 1,
+  "timestamp": 1731766505077,
+  "index": "/tdl-front/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/tdl-front/chunk-5TFGBRCZ.js",
+        "/tdl-front/chunk-EQDQRRRY.js",
+        "/tdl-front/chunk-FK6H3RFT.js",
+        "/tdl-front/chunk-PM3QAI3C.js",
+        "/tdl-front/chunk-QMQTSFHS.js",
+        "/tdl-front/chunk-X4BKAUJF.js",
+        "/tdl-front/favicon.ico",
+        "/tdl-front/index.html",
+        "/tdl-front/main-TYI4J7BH.js",
+        "/tdl-front/manifest.webmanifest",
+        "/tdl-front/polyfills-FFHMD2TL.js",
+        "/tdl-front/styles-226O3EFV.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/tdl-front/fonts/Roboto-Black.ttf",
+        "/tdl-front/fonts/Roboto-BlackItalic.ttf",
+        "/tdl-front/fonts/Roboto-Bold.ttf",
+        "/tdl-front/fonts/Roboto-BoldItalic.ttf",
+        "/tdl-front/fonts/Roboto-Italic.ttf",
+        "/tdl-front/fonts/Roboto-Light.ttf",
+        "/tdl-front/fonts/Roboto-LightItalic.ttf",
+        "/tdl-front/fonts/Roboto-Medium.ttf",
+        "/tdl-front/fonts/Roboto-MediumItalic.ttf",
+        "/tdl-front/fonts/Roboto-Regular.ttf",
+        "/tdl-front/fonts/Roboto-Thin.ttf",
+        "/tdl-front/fonts/Roboto-ThinItalic.ttf",
+        "/tdl-front/icons/icon-128x128.png",
+        "/tdl-front/icons/icon-144x144.png",
+        "/tdl-front/icons/icon-152x152.png",
+        "/tdl-front/icons/icon-192x192.png",
+        "/tdl-front/icons/icon-384x384.png",
+        "/tdl-front/icons/icon-512x512.png",
+        "/tdl-front/icons/icon-72x72.png",
+        "/tdl-front/icons/icon-96x96.png",
+        "/tdl-front/media/material-symbols-rounded-NWIY2ONB.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/tdl-front/chunk-5TFGBRCZ.js": "f2e569f690dabe745534b0fd49fdf5e096cba587",
+    "/tdl-front/chunk-EQDQRRRY.js": "c40057a332d0341d595cc1d005fc2ab4f2573957",
+    "/tdl-front/chunk-FK6H3RFT.js": "3c538698719f1cf34410542b8c702bc484e025ee",
+    "/tdl-front/chunk-PM3QAI3C.js": "7ae6c621b9351db3f3bf1fc565b4e0b0196d48b0",
+    "/tdl-front/chunk-QMQTSFHS.js": "ad051575e10f95651c6cd7774499491debd3c3c5",
+    "/tdl-front/chunk-X4BKAUJF.js": "5949748770b2dc1a43c598eeac5bf45f74a083d3",
+    "/tdl-front/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/tdl-front/fonts/Roboto-Black.ttf": "77f9fac05293485120799e83c16225a1af961f25",
+    "/tdl-front/fonts/Roboto-BlackItalic.ttf": "69f1818f7701c009b7ff54ab8e737f925c34d714",
+    "/tdl-front/fonts/Roboto-Bold.ttf": "1e8baa650d943f2b78f1b77dbfe3ba1fb590e21a",
+    "/tdl-front/fonts/Roboto-BoldItalic.ttf": "4393fed62462cc8dd61175539be68f76398eb743",
+    "/tdl-front/fonts/Roboto-Italic.ttf": "01593eb48207734fd1e06e1eb91227d1117ba1e7",
+    "/tdl-front/fonts/Roboto-Light.ttf": "02970068cbc5b4daf5b530e994a5b6f547d03bc1",
+    "/tdl-front/fonts/Roboto-LightItalic.ttf": "21d6b26b4f9695394cecca173494861024764f80",
+    "/tdl-front/fonts/Roboto-Medium.ttf": "0ee6b0bd5ff6fe30e4ef720a08e38656dc60985f",
+    "/tdl-front/fonts/Roboto-MediumItalic.ttf": "19946edc08a323877458a4028d5daecbcb70b0be",
+    "/tdl-front/fonts/Roboto-Regular.ttf": "ce57fc6c6705cb20661ac325fac5d4598b6efbca",
+    "/tdl-front/fonts/Roboto-Thin.ttf": "07ade56a94bbca87948ce7878a0b14a1df9bb87a",
+    "/tdl-front/fonts/Roboto-ThinItalic.ttf": "6a08d5ff3989d2b4a8e960ca0e88e7e0ff104708",
+    "/tdl-front/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/tdl-front/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/tdl-front/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/tdl-front/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/tdl-front/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/tdl-front/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/tdl-front/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/tdl-front/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/tdl-front/index.html": "83751af3319a508ed08a562b8cb1e2a83a4f0f26",
+    "/tdl-front/main-TYI4J7BH.js": "e19ac934a5cbc0807bdb96593232828a6ded32a4",
+    "/tdl-front/manifest.webmanifest": "c98ec445b179864b780df922d3cae316d9b5eb70",
+    "/tdl-front/media/material-symbols-rounded-NWIY2ONB.woff2": "cc34a057e0f76c1b14cab152a25010a30a507688",
+    "/tdl-front/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/tdl-front/styles-226O3EFV.css": "c0d3fe38dcc6cddba496b3ca65015a7a9feda6a4"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
