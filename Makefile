@@ -12,3 +12,7 @@ lint:
 
 format:
 	npm run format
+
+reinstall-packages:
+	rm -rf /project/node_modules/* /project/package-lock.json
+	npm install --verbose
