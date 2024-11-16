@@ -8,16 +8,19 @@
 # compatible
 # FROM node:22.11.0-alpine3.20
 # FROM node:22.11.0-bookworm-slim # does not allow installing angular/cli 2024/11 ???
-FROM node:20.18.0-bookworm-slim
+# FROM node:20.18.0-bookworm-slim
+# LTS
+FROM node:22.11.0-bookworm-slim
 
-
-# RUN npm install -g npm@10.9.0
+# https://www.npmjs.com/package/npm?activeTab=versions
 RUN npm install -g npm@latest
+# RUN npm install -g npm@10.9.0
 
-# 2024-11-14 empty registry??? https://registry.npmjs.org/
-# RUN npm config set registry https://skimdb.npmjs.com/registry \
-# && npm install -g @angular/cli
-RUN npm install -g @angular/cli
+
+# issues here 2024-11: solution run 2 times the following command... manually
+# RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@18.2.12 --verbose
+
 
 ## dev tools (alpine)
 # RUN apk add make
@@ -25,6 +28,7 @@ RUN npm install -g @angular/cli
 
 ## dev tools (debian)
 RUN apt update \
+&& apt upgrade \
 && apt -y install make git
 
 # to avoid git permission conflict, match local user
@@ -35,12 +39,27 @@ RUN apt update \
 RUN mkdir -p /project/node_modules \
 && chown -R 1000:1000 /project/
 
-USER node
 
+# useless for protection, but goo indication for image use
+USER node
 WORKDIR /project
 
 # manuak image creation
 # docker run -it node:20.18.0-bookworm-slim bash
 # docker commit --change='USER node' --change='WORKDIR /project' dfa07ae3e503 devenv-angular:node-20.18.0-bookworm-slim
 
+# docker run -it debian:bookworm-slim bash
+# docker run -it --name angular-container node:22.11.0-bookworm-slim bash
+# docker run --rm -it node:22.11.0-bookworm-slim bash
 
+
+
+# docker run -it --name angular-container node:22.11.0-bookworm-slim bash
+# docker commit --change='USER node' --change='WORKDIR /project' angular-container devenv-angular:node-20.18.0-bookworm-slim
+
+
+# $ ng version:
+# Angular CLI: 18.2.12
+# Node: 22.11.0
+# Package Manager: npm 10.9.0
+# OS: linux x64

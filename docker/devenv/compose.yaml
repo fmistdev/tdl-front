@@ -17,6 +17,7 @@ services:
       - 4200:4200
     # keep the local dev container alive
     command: tail -F anything
+    # user: root
 
 volumes:
   nodemodules:
