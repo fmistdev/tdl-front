@@ -71,3 +71,18 @@ which is retrieved by dedicated service to be injected and displayed in the app
     git config -l --show-origin
 
     git push --set-upstream origin master
+
+
+## update angular version 2024-11
+
+ng --version
+npm install -g @angular/cli
+npm install @angular/cli
+ng update @angular/core @angular/cli
+ng update
+
+trick to force update when hanged:
+rm -rf ./node_modules/*
+npm install --verbose
+
+lot of issues, need to restart the same command twice to have it work
