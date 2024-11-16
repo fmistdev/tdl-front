@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     # give a name to the builded image
-    image: devenv-angular:node-20.18.0-bookworm-slim
+    image: devenv-angular:node-22.11.0-bookworm-slim
     container_name: '${PROJECT_NAME}-front-container'
     volumes:
       - ../..:/project/
@@ -17,7 +17,6 @@ services:
       - 4200:4200
     # keep the local dev container alive
     command: tail -F anything
-    # user: root
 
 volumes:
   nodemodules:

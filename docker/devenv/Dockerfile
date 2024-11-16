@@ -44,19 +44,11 @@ RUN mkdir -p /project/node_modules \
 USER node
 WORKDIR /project
 
-# manuak image creation
-# docker run -it node:20.18.0-bookworm-slim bash
-# docker commit --change='USER node' --change='WORKDIR /project' dfa07ae3e503 devenv-angular:node-20.18.0-bookworm-slim
-
-# docker run -it debian:bookworm-slim bash
+# manual image creation
 # docker run -it --name angular-container node:22.11.0-bookworm-slim bash
-# docker run --rm -it node:22.11.0-bookworm-slim bash
-
-
-
-# docker run -it --name angular-container node:22.11.0-bookworm-slim bash
-# docker commit --change='USER node' --change='WORKDIR /project' angular-container devenv-angular:node-20.18.0-bookworm-slim
-
+# all steps manually (and install cli 2 times)
+# ng version (to check)
+# docker commit --change='USER node' --change='WORKDIR /project' angular-container devenv-angular:node-22.11.0-bookworm-slim
 
 # $ ng version:
 # Angular CLI: 18.2.12
