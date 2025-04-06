@@ -4,3 +4,11 @@
     flex-direction: row;
     gap: 1rem
 }
+
+.stop-scan-button {
+    opacity: .5;
+
+    &.scan-in-progress {
+        opacity: 1;
+    }
+}

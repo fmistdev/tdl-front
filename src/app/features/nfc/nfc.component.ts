@@ -13,11 +13,13 @@ import { CommonModule } from '@angular/common';
 export class NfcComponent implements OnDestroy {
 
   nfcData: (string | null)[] = [];
+  isScanInProgress = false;
   private nfcSubscription?: Subscription;
 
   constructor(private nfcService: NfcService) {}
 
   scanNfcTag(): void {
+    this.isScanInProgress = true
     this.nfcSubscription = this.nfcService.startNfcScan().subscribe({
       next: (data) => {
         console.log("✅ NFC reçu :", data);
@@ -32,6 +34,7 @@ export class NfcComponent implements OnDestroy {
 
   stopNfcScan(): void {
     this.nfcSubscription?.unsubscribe();
+    this.isScanInProgress = false
   }
 
   ngOnDestroy(): void {

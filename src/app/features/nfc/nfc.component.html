@@ -1,6 +1,6 @@
 <div class="buttons">
     <button class="button" (click)="scanNfcTag()">📡 Scanner un tag NFC</button>
-    <button class="button" *ngIf="nfcData" (click)="stopNfcScan()">🛑 Arrêter le scan</button>
+    <button class="button stop-scan-button" [class.scan-in-progress]="isScanInProgress" (click)="stopNfcScan()">🛑 Arrêter le scan</button>
 </div>
 
 <p *ngIf="nfcData.length > 0">🔹 Données NFC :</p>
