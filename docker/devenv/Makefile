@@ -6,8 +6,12 @@
 up:
 	docker-compose up -d
 
-down:
-	docker-compose down
+# prefer stop to avoid losing devenv setup
+# down:
+# 	docker-compose down
+
+stop:
+	docker-compose stop
 
 # rebuild docker image based on Dockerfile
 build:
