@@ -23,7 +23,10 @@ export class NfcComponent implements OnDestroy {
         console.log("✅ NFC reçu :", data);
         this.nfcData.push(data); // Mise à jour du template
       },
-      error: (error) => console.error(error),
+      error: (error) => {
+        this.nfcData.push(error);
+        console.error(error)
+      },
     });
   }
 
