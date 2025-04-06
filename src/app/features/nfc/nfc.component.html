@@ -1,0 +1,10 @@
+<button (click)="scanNfcTag()">📡 Scanner un tag NFC</button>
+<button *ngIf="nfcData" (click)="stopNfcScan()">🛑 Arrêter le scan</button>
+
+<p *ngIf="nfcData.length > 0">🔹 Données NFC :</p>
+<ul>
+    @for (item of nfcData; track $index) {
+    <li>{{item}}</li>
+    
+    }
+</ul>
